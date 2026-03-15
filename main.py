@@ -8,7 +8,7 @@ import base64
 import io
 import struct
 import sys
-import os  # <-- IMPORTANT: Add os import
+import os
 from flask import Flask, render_template_string, request, jsonify, session
 import threading
 
@@ -576,6 +576,10 @@ HTML_TEMPLATE = '''
                 0 0 20px rgba(0, 204, 255, 0.3),
                 inset 0 0 10px rgba(0, 204, 255, 0.2);
             background: rgba(0, 20, 40, 0.8);
+        }
+
+        .form-group input:placeholder-shown {
+            /* Empty */
         }
 
         .form-group label {
@@ -1368,4 +1372,4 @@ if __name__ == '__main__':
     print(f"\n🚀 Starting server on http://{host}:{port}")
     print("📱 Press Ctrl+C to stop\n")
     
-    app.run(debug=True, host=host, port=port)
+    app.run(debug=False, host=host, port=port)
